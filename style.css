@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: rgb(226, 226, 226);
+}
+.widget {
+  /* width: 100%;  */
+}
+
+/* Portrait-specific styles */
+@media (orientation: portrait) {
+  .widget-portrait {
+    display: block; /* Show the portrait widget */
+    margin:auto;
+    margin-top: 12px;
+    border-radius: 48px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    overflow: hidden;
+    width: calc(100% - 24px);
+    height: calc((100vw / 16 * 9) + 100px); /* Maintain calculated height */
+  }
+
+  .widget-landscape {
+    display: none; /* Hide the landscape widget */
+  }
+}
+
+/* Landscape-specific styles */
+@media (orientation: landscape) {
+  .widget-portrait {
+    display: none; /* Hide the portrait widget */
+  }
+
+  .widget-landscape {
+    display: block; /* Show the landscape widget */
+    /* aspect-ratio: 16 / 9; Maintain the aspect ratio */
+    height: auto; /* Automatically adjust height based on width */
+  }
+}
